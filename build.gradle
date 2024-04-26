@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.punnyajoshi.webmastery'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+dependencies
+        {
+            //selenium
+            implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.19.1'
+
+            //lombok
+            implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+            annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+
+            //Github
+            implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+
+
+            //test implementation
+            testImplementation platform('org.junit:junit-bom:5.9.1')
+            testImplementation 'org.junit.jupiter:junit-jupiter'
+
+            //testng
+            testImplementation group: 'org.testng', name: 'testng', version: '7.10.1'
+
+            //Java faker
+            implementation group: 'com.github.javafaker', name: 'javafaker', version: '0.2'
+
+        }
+
+
+ test {
+     outputs.upToDateWhen{false}
+     systemProperties System.properties
+    useTestNG(){
+        parallel = "methods"
+        threadCount = Integer.parseInt(System.getProperty("sessions","2"));
+        includeGroups System.getProperty("tags","smoke")
+        testLogging.showStandardStreams = true
+        useDefaultListeners true
+        outputDirectory = file("$buildDir/"+System.getProperty('tags','smoke'))
+    }
+}
