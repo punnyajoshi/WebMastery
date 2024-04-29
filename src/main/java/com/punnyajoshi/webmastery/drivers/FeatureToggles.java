@@ -3,8 +3,7 @@ package com.punnyajoshi.webmastery.drivers;
 public enum FeatureToggles {
     HEADLESS(Boolean.parseBoolean(System.getProperty("headless","false"))),
 
-    RESPONSIVE(Boolean.parseBoolean(System.getProperty("headless","false"))),
-
+    RESPONSIVE(Boolean.parseBoolean(System.getProperty("rsponsive","false"))),
     LOGGER(Boolean.parseBoolean(System.getProperty("headless","false")));
 
 

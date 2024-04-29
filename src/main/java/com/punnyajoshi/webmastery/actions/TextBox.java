@@ -15,9 +15,6 @@ public class TextBox extends WebActions{
     public static void typing(WebElement element, String value){
         webDriverWait.until(ExpectedConditions.visibilityOf(element)).sendKeys(value);
     }
-    //    public void typing(WebElement element,String value, int timeout){
-//
-//    }
     public void typing(By by, String value){
 
     }
