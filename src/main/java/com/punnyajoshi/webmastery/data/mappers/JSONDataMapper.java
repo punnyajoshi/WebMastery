@@ -1,14 +1,15 @@
-package com.punnyajoshi.webmastery.data;
+package com.punnyajoshi.webmastery.data.mappers;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
+import com.punnyajoshi.webmastery.data.mappers.DataMapper;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Map;
 import java.util.Objects;
 
-public class JSONDataMapper<T> implements DataMapper<T>{
+public class JSONDataMapper<T> implements DataMapper<T> {
 
     @Override
     public T map(String filename, String key, Class<T> tClass){

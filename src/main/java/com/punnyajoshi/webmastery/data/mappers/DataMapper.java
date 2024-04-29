@@ -1,4 +1,4 @@
-package com.punnyajoshi.webmastery.data;
+package com.punnyajoshi.webmastery.data.mappers;
 
 public interface DataMapper<T> {
     //generics

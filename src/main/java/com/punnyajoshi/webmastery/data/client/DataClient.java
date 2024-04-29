@@ -1,8 +1,8 @@
-package com.punnyajoshi.webmastery.data;
+package com.punnyajoshi.webmastery.data.client;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Map;
+import com.punnyajoshi.webmastery.data.mappers.DataMapper;
+import com.punnyajoshi.webmastery.data.mappers.JSONDataMapper;
+
 import java.util.Objects;
 
 public class DataClient {

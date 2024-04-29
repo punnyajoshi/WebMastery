@@ -31,18 +31,23 @@ dependencies
             //Java faker
             implementation group: 'com.github.javafaker', name: 'javafaker', version: '0.2'
 
+            //Google
+            implementation 'com.google.code.gson:gson:2.8.8'
+
+
         }
 
 
  test {
-     outputs.upToDateWhen{false}
-     systemProperties System.properties
-    useTestNG(){
-        parallel = "methods"
-        threadCount = Integer.parseInt(System.getProperty("sessions","2"));
-        includeGroups System.getProperty("tags","smoke")
-        testLogging.showStandardStreams = true
-        useDefaultListeners true
-        outputDirectory = file("$buildDir/"+System.getProperty('tags','smoke'))
-    }
+//     outputs.upToDateWhen{false}
+//     systemProperties System.properties
+//    useTestNG(){
+//        parallel = "methods"
+//        threadCount = Integer.parseInt(System.getProperty("sessions","2"));
+//        includeGroups System.getProperty("tags","smoke")
+//        testLogging.showStandardStreams = true
+//        useDefaultListeners true
+//        outputDirectory = file("$buildDir/"+System.getProperty('tags','smoke'))
+//    }
+     useTestNG()
 }
